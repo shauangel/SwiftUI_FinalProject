@@ -14,6 +14,10 @@
 		48173F96277ABB3300F6BFD6 /* SwiftUI_FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173F95277ABB3300F6BFD6 /* SwiftUI_FinalProjectTests.swift */; };
 		48173FA0277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173F9F277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITests.swift */; };
 		48173FA2277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FA1277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITestsLaunchTests.swift */; };
+		48173FB2278AF6C700F6BFD6 /* GymInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB1278AF6C700F6BFD6 /* GymInfoModel.swift */; };
+		48173FB4278B092F00F6BFD6 /* GymListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB3278B092F00F6BFD6 /* GymListViewModel.swift */; };
+		48173FB6278B1D2B00F6BFD6 /* GymListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB5278B1D2B00F6BFD6 /* GymListView.swift */; };
+		48173FB8278B22FB00F6BFD6 /* GymDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		48173F9B277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_FinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48173F9F277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_FinalProjectUITests.swift; sourceTree = "<group>"; };
 		48173FA1277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_FinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48173FB1278AF6C700F6BFD6 /* GymInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymInfoModel.swift; sourceTree = "<group>"; };
+		48173FB3278B092F00F6BFD6 /* GymListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymListViewModel.swift; sourceTree = "<group>"; };
+		48173FB5278B1D2B00F6BFD6 /* GymListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymListView.swift; sourceTree = "<group>"; };
+		48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,9 @@
 		48173F83277ABB3100F6BFD6 /* SwiftUI_FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				48173FB02789D2CF00F6BFD6 /* models */,
+				48173FAF2789D2C600F6BFD6 /* view models */,
+				48173FAE2789D2A900F6BFD6 /* views */,
 				48173F84277ABB3100F6BFD6 /* SwiftUI_FinalProjectApp.swift */,
 				48173F86277ABB3100F6BFD6 /* ContentView.swift */,
 				48173F88277ABB3200F6BFD6 /* Assets.xcassets */,
@@ -125,6 +136,31 @@
 				48173FA1277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITestsLaunchTests.swift */,
 			);
 			path = SwiftUI_FinalProjectUITests;
+			sourceTree = "<group>";
+		};
+		48173FAE2789D2A900F6BFD6 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				48173FB5278B1D2B00F6BFD6 /* GymListView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		48173FAF2789D2C600F6BFD6 /* view models */ = {
+			isa = PBXGroup;
+			children = (
+				48173FB3278B092F00F6BFD6 /* GymListViewModel.swift */,
+			);
+			path = "view models";
+			sourceTree = "<group>";
+		};
+		48173FB02789D2CF00F6BFD6 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				48173FB1278AF6C700F6BFD6 /* GymInfoModel.swift */,
+				48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48173FB6278B1D2B00F6BFD6 /* GymListView.swift in Sources */,
+				48173FB2278AF6C700F6BFD6 /* GymInfoModel.swift in Sources */,
 				48173F87277ABB3100F6BFD6 /* ContentView.swift in Sources */,
+				48173FB4278B092F00F6BFD6 /* GymListViewModel.swift in Sources */,
+				48173FB8278B22FB00F6BFD6 /* GymDetailModel.swift in Sources */,
 				48173F85277ABB3100F6BFD6 /* SwiftUI_FinalProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +467,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +497,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

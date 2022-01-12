@@ -6,11 +6,28 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ContentView: View {
+    //@StateObject var gymListViewModel = GymListViewModel()
+    @StateObject var gymDetailViewModel = GymRowViewModel()
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            /*
+            Color(.black)
+                .ignoresSafeArea()
+            AsyncImage(url: URL(string: "https://cataas.com/cat/cute"))
+                .opacity(0.5)
+             */
+            Button {
+                //gymListViewModel.fetchGymInfo(city: "臺北市")
+                gymDetailViewModel.fetchGymDetail(gymId: 13338)
+            } label : {
+                Text("testing API!!")
+            }
+        }
     }
 }
 
