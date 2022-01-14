@@ -10,7 +10,7 @@ import Foundation
 
 struct ContentView: View {
     //@StateObject var gymListViewModel = GymListViewModel()
-    @StateObject var gymDetailViewModel = GymRowViewModel()
+    @StateObject var gymDetailViewModel = GymDetailViewModel()
     
     
     var body: some View {

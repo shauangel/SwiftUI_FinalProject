@@ -28,20 +28,20 @@ struct GymDetail: Codable {
     let EnableMonth: Int
     let EnableYear: Int
     let ParkType: String?
-    let PassEasyEle: String?
+    let PassEasyEle: Int?
     let PassEasyElePhotoUrl: URL?
     let PassEasyFuncOthers: String?
-    let PassEasyParking: String?
+    let PassEasyParking: Int?
     let PassEasyParkingPhotoUrl: URL?
-    let PassEasyShower: String?
+    let PassEasyShower: Int?
     let PassEasyShowerPhotoUrl: URL?
-    let PassEasyToilet: String?
+    let PassEasyToilet: Int?
     let PassEasyToiletPhotoUrl: URL?
-    let PassEasyWay: String?
+    let PassEasyWay: Int?
     let PassEasyWayPhotoUrl: URL?
     let PublicTransport: String?
     let RateCount: Int?
-    let WheelchairAuditorium: String?
+    let WheelchairAuditorium: Int?
     let WheelchairAuditoriumPhotoUrl: String?
     
     enum CodingKeys: String, CodingKey {

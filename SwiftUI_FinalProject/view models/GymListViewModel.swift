@@ -40,7 +40,8 @@ class GymListViewModel: ObservableObject {
 }
 
 
-class GymRowViewModel: ObservableObject {
+
+class GymDetailViewModel: ObservableObject {
     @Published var gymDetail: GymDetail?
     
     func fetchGymDetail(gymId: Int) {
@@ -54,11 +55,12 @@ class GymRowViewModel: ObservableObject {
                         //decode searching response to defined structure by decoder
                         let decoder = JSONDecoder()
                         decoder.dateDecodingStrategy = .iso8601
-                        let gymDetail = try decoder.decode(GymDetail.self, from: data)
-                        print(gymDetail)
+                        let temp = try decoder.decode(GymDetail.self, from: data)
                         
+                        //switch to main thread
                         DispatchQueue.main.async {
-                            self.gymDetail = gymDetail
+                            self.gymDetail = temp
+                            print(self.gymDetail)
                         }
                     } catch {
                         print(error)
