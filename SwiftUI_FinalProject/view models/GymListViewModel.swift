@@ -49,8 +49,6 @@ class GymDetailViewModel: ObservableObject {
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
-                    let content = String(data: data, encoding: .utf8) ?? ""
-                    print(content)
                     do {
                         //decode searching response to defined structure by decoder
                         let decoder = JSONDecoder()
@@ -68,5 +66,12 @@ class GymDetailViewModel: ObservableObject {
                 }
             }.resume()
         }
+    }
+    
+    func getImage() -> [String] {
+        var photoList = [String]()
+        photoList.append(self.gymDetail?.photoURL1?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "encoding URL error")
+        photoList.append(self.gymDetail?.photoURL2?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "encoding URL error")
+        return photoList
     }
 }

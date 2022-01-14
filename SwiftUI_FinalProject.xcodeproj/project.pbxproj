@@ -20,6 +20,7 @@
 		48173FB8278B22FB00F6BFD6 /* GymDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */; };
 		48173FBA278F0C5000F6BFD6 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB9278F0C5000F6BFD6 /* MainPageView.swift */; };
 		48173FBC278F0CA400F6BFD6 /* CoverPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FBB278F0CA400F6BFD6 /* CoverPageView.swift */; };
+		48173FBE2791598500F6BFD6 /* WaitingAnimationView.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FBD2791598500F6BFD6 /* WaitingAnimationView.swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDetailModel.swift; sourceTree = "<group>"; };
 		48173FB9278F0C5000F6BFD6 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		48173FBB278F0CA400F6BFD6 /* CoverPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPageView.swift; sourceTree = "<group>"; };
+		48173FBD2791598500F6BFD6 /* WaitingAnimationView.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingAnimationView.swift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				48173FB5278B1D2B00F6BFD6 /* GymListView.swift */,
 				48173FB9278F0C5000F6BFD6 /* MainPageView.swift */,
 				48173FBB278F0CA400F6BFD6 /* CoverPageView.swift */,
+				48173FBD2791598500F6BFD6 /* WaitingAnimationView.swift.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				48173FBC278F0CA400F6BFD6 /* CoverPageView.swift in Sources */,
 				48173FB8278B22FB00F6BFD6 /* GymDetailModel.swift in Sources */,
 				48173F85277ABB3100F6BFD6 /* SwiftUI_FinalProjectApp.swift in Sources */,
+				48173FBE2791598500F6BFD6 /* WaitingAnimationView.swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
