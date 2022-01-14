@@ -16,7 +16,7 @@ struct MainPageView: View {
                 .tabItem {
                     Label("首頁", systemImage: "house.fill")
                 }
-            Text("SEARCHPAGE")
+            GymListView()
                 .tabItem {
                     Label("尋找場館", systemImage: "map.fill")
                 }

@@ -41,6 +41,7 @@ class GymListViewModel: ObservableObject {
 
 
 class GymRowViewModel: ObservableObject {
+    @Published var gymDetail: GymDetail?
     
     func fetchGymDetail(gymId: Int) {
         let urlString = "https://iplay.sa.gov.tw/odata/Gym(\(gymId))?$format=application/json;odata.metadata=none&$expand=GymFuncData"
@@ -55,6 +56,10 @@ class GymRowViewModel: ObservableObject {
                         decoder.dateDecodingStrategy = .iso8601
                         let gymDetail = try decoder.decode(GymDetail.self, from: data)
                         print(gymDetail)
+                        
+                        DispatchQueue.main.async {
+                            self.gymDetail = gymDetail
+                        }
                     } catch {
                         print(error)
                     }

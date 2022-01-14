@@ -90,6 +90,17 @@ struct GymInfoView: View {
     }
 }
 
+struct GymDetailPageView: View {
+    var gymDetail: GymInfo
+    
+    var body: some View {
+        Text("HI")
+    }
+    
+    
+}
+
+
 
 struct GymView_Previews: PreviewProvider {
     static var previews: some View {
