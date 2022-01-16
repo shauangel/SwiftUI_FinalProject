@@ -18,12 +18,17 @@ struct GymListView: View {
                 let columns = [GridItem()]
                 LazyVGrid(columns: columns) {
                     ForEach(gymListViewModel.gymList) { gym in
-                        GymInfoView(gymInfo: gym)
+                        NavigationLink {
+                            GymDetailPageView(gymID: gym.gymId)
+                        } label: {
+                            GymInfoView(gymInfo: gym)
+                        }
                     }
                 }
             }
             .navigationTitle("體育場館")
         }
+        .foregroundColor(.black)
         .searchable(text: $searchKey, placement: .navigationBarDrawer(displayMode: .always))
         .onAppear {
             gymListViewModel.fetchGymInfo(city: searchKey)
@@ -99,12 +104,26 @@ struct GymDetailPageView: View {
                 GymPhotoSlideView(photoURLList: gymDetailViewModel.getImage())
                 
                 //地址、電話、首頁連結分享、加入最愛
-                GymMainDetailView(telephone: gymDetailViewModel.gymDetail?.telephone, address: gymDetailViewModel.gymDetail?.address)
+                GymMainDetailView(telephone: gymDetailViewModel.gymDetail?.telephone, address: gymDetailViewModel.gymDetail?.address, name: gymDetailViewModel.gymDetail?.name)
                 
-                
-                
-                
-                Text(gymDetailViewModel.gymDetail?.name ?? "err")
+                //詳細資訊
+                VStack(alignment: .leading) {
+                    Text("詳細資訊")
+                        .font(.headline)
+                    Text(gymDetailViewModel.gymDetail?.intro ?? "loading")
+                    Text("詳細資訊")
+                        .font(.headline)
+                    Button(action: {
+                        print(gymDetailViewModel.getTransInfo())
+                    }, label: {
+                        Text("Just testing~~!")
+                    })
+                }
+                .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
+                .frame(width: compWidth-40)
+                .background(
+                    Color.white
+                        .shadow(color: .gray, radius: 4, x: 6, y: 4))
             }
         }
         .onAppear {
@@ -113,6 +132,7 @@ struct GymDetailPageView: View {
     }
 }
 
+//相簿滑頁
 struct GymPhotoSlideView: View {
     var photoURLList: [String]
     private var compWidth: CGFloat { UIScreen.main.bounds.width }
@@ -138,14 +158,20 @@ struct GymPhotoSlideView: View {
     }
 }
 
+//場館主要資訊卡
 struct GymMainDetailView: View {
     var telephone: String?
     var address: String?
+    var name: String?
     private var compWidth: CGFloat { UIScreen.main.bounds.width }
     
     var body: some View {
         VStack(alignment: .leading) {
             VStack {
+                Text(name ?? "loading")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .padding()
                 //顯示地址
                 HStack(alignment: .center) {
                     Image(systemName: "location.square")

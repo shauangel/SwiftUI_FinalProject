@@ -16,7 +16,7 @@
 		48173FA2277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FA1277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITestsLaunchTests.swift */; };
 		48173FB2278AF6C700F6BFD6 /* GymInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB1278AF6C700F6BFD6 /* GymInfoModel.swift */; };
 		48173FB4278B092F00F6BFD6 /* GymListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB3278B092F00F6BFD6 /* GymListViewModel.swift */; };
-		48173FB6278B1D2B00F6BFD6 /* GymListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB5278B1D2B00F6BFD6 /* GymListView.swift */; };
+		48173FB6278B1D2B00F6BFD6 /* GymSearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB5278B1D2B00F6BFD6 /* GymSearchPageView.swift */; };
 		48173FB8278B22FB00F6BFD6 /* GymDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */; };
 		48173FBA278F0C5000F6BFD6 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FB9278F0C5000F6BFD6 /* MainPageView.swift */; };
 		48173FBC278F0CA400F6BFD6 /* CoverPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FBB278F0CA400F6BFD6 /* CoverPageView.swift */; };
@@ -53,7 +53,7 @@
 		48173FA1277ABB3300F6BFD6 /* SwiftUI_FinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_FinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		48173FB1278AF6C700F6BFD6 /* GymInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymInfoModel.swift; sourceTree = "<group>"; };
 		48173FB3278B092F00F6BFD6 /* GymListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymListViewModel.swift; sourceTree = "<group>"; };
-		48173FB5278B1D2B00F6BFD6 /* GymListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymListView.swift; sourceTree = "<group>"; };
+		48173FB5278B1D2B00F6BFD6 /* GymSearchPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymSearchPageView.swift; sourceTree = "<group>"; };
 		48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDetailModel.swift; sourceTree = "<group>"; };
 		48173FB9278F0C5000F6BFD6 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		48173FBB278F0CA400F6BFD6 /* CoverPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPageView.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		48173FAE2789D2A900F6BFD6 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				48173FB5278B1D2B00F6BFD6 /* GymListView.swift */,
+				48173FB5278B1D2B00F6BFD6 /* GymSearchPageView.swift */,
 				48173FB9278F0C5000F6BFD6 /* MainPageView.swift */,
 				48173FBB278F0CA400F6BFD6 /* CoverPageView.swift */,
 				48173FBD2791598500F6BFD6 /* WaitingAnimationView.swift.swift */,
@@ -302,7 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48173FB6278B1D2B00F6BFD6 /* GymListView.swift in Sources */,
+				48173FB6278B1D2B00F6BFD6 /* GymSearchPageView.swift in Sources */,
 				48173FBA278F0C5000F6BFD6 /* MainPageView.swift in Sources */,
 				48173FB2278AF6C700F6BFD6 /* GymInfoModel.swift in Sources */,
 				48173F87277ABB3100F6BFD6 /* ContentView.swift in Sources */,

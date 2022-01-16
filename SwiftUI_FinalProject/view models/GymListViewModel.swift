@@ -30,9 +30,7 @@ class GymListViewModel: ObservableObject {
                             self.gymList = gymList
                             print(self.gymList)
                         }
-                    } catch {
-                        print(error)
-                    }
+                    } catch { print(error) }
                 }
             }.resume()
         }
@@ -58,11 +56,10 @@ class GymDetailViewModel: ObservableObject {
                         //switch to main thread
                         DispatchQueue.main.async {
                             self.gymDetail = temp
-                            print(self.gymDetail)
+                            if let display = self.gymDetail { print(display) }
+                            else { print("load err") }
                         }
-                    } catch {
-                        print(error)
-                    }
+                    } catch { print(error) }
                 }
             }.resume()
         }
@@ -73,5 +70,17 @@ class GymDetailViewModel: ObservableObject {
         photoList.append(self.gymDetail?.photoURL1?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "encoding URL error")
         photoList.append(self.gymDetail?.photoURL2?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "encoding URL error")
         return photoList
+    }
+    
+    func getTransInfo() -> [String] {
+        if let trans = self.gymDetail?.PublicTransport {
+            var transArray = trans.components(separatedBy: "\r\n")
+            transArray = transArray.filter({ $0 != "" })
+            return transArray
+        }
+        else {
+            print("oh no")
+            return [""]
+        }
     }
 }
