@@ -96,7 +96,6 @@ struct GymDetailPageView: View {
     var gymInfo: GymInfo
     @StateObject var gymDetailViewModel = GymDetailViewModel()
     private var compWidth: CGFloat { UIScreen.main.bounds.width }
-    @State var transInfo = [String]()
     
     var body: some View {
         ScrollView(.vertical) {
@@ -107,64 +106,24 @@ struct GymDetailPageView: View {
                 //地址、電話、首頁連結分享、加入最愛
                 GymMainDetailView(telephone: gymDetailViewModel.gymDetail?.telephone, address: gymDetailViewModel.gymDetail?.address, name: gymDetailViewModel.gymDetail?.name, webpage: gymDetailViewModel.gymDetail?.webURL)
                 
-                //開放狀態、交通
-                VStack(alignment: .leading) {
-                    Text("開放狀態")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                    Text(gymDetailViewModel.getOpenState(state: gymInfo.openState))
-                    Divider()
-                    Text("付費方式")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                    Text(gymInfo.rentState)
-                    Divider()
-                    if gymDetailViewModel.gymDetail != nil {
-                        DisclosureGroup {
-                            VStack(alignment: .leading) {
-                                ForEach(gymDetailViewModel.getTransInfo(), id:\.self) { str in
-                                    Text(str)
-                                }
-                            }
-                        } label: {
-                            Text("交通資訊")
-                                .foregroundColor(.black)
-                                .font(.title3)
-                                .fontWeight(.bold)
-                        }
-                        .accentColor(.gray)
-                    }
-                }
-                .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
-                .frame(width: compWidth-40)
-                .background(
-                    Color.white
-                        .shadow(color: .gray, radius: 4, x: 6, y: 4))
-                .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                //開放狀態、付費方式、停車場、交通
+                SecondaryInfoCard(gymInfo: gymInfo, gymDetailViewModel: gymDetailViewModel)
                 
-                //簡介、建立年代、停車場
-                VStack(alignment: .leading) {
-                    ZStack {
-                        Rectangle()
-                            .stroke(Color(red: 85/255, green: 111/255, blue: 122/255))
-                        Text("場館介紹")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                //簡介、建立年代、賽事經歷
+                GymIntroduction(gymDetailViewModel: gymDetailViewModel)
+                
+                //無障礙資訊
+                List {
+                    HStack {
+                        Text("testing")
+                        Text(String(1))
+                        Image(systemName: "figure.roll")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                            .padding(.leading)
                     }
-                    .padding(.bottom)
-                    Text("簡介")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                    Text(gymDetailViewModel.gymDetail?.intro ?? "loading")
-                    Divider()
                 }
-                .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
-                .frame(width: compWidth-40)
-                .background(
-                    Color.white
-                        .shadow(color: .gray, radius: 4, x: 6, y: 4))
-                .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
             }
         }
         .onAppear {
@@ -324,33 +283,111 @@ struct GymView_Previews: PreviewProvider {
     }
 }
 
+struct SecondaryInfoCard: View {
+    var gymInfo: GymInfo
+    @StateObject var gymDetailViewModel: GymDetailViewModel
+    private var compWidth: CGFloat { UIScreen.main.bounds.width }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("開放狀態")
+                .font(.title3)
+                .fontWeight(.bold)
+            Text(gymDetailViewModel.getOpenState(state: gymInfo.openState))
+            Divider()
+            Text("付費方式")
+                .font(.title3)
+                .fontWeight(.bold)
+            Text(gymInfo.rentState)
+            Divider()
+            Text("停車場")
+                .font(.title3)
+                .fontWeight(.bold)
+            Text(gymDetailViewModel.gymDetail?.ParkType ?? "無相關資訊")
+            Divider()
+            if gymDetailViewModel.gymDetail != nil {
+                DisclosureGroup {
+                    VStack(alignment: .leading) {
+                        ForEach(gymDetailViewModel.getTransInfo(), id:\.self) { str in
+                            Text(str)
+                        }
+                    }
+                } label: {
+                    Text("交通資訊")
+                        .foregroundColor(.black)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                }
+                .accentColor(.gray)
+            }
+        }
+        .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
+        .frame(width: compWidth-40)
+        .background(
+            Color.white
+                .shadow(color: .gray, radius: 4, x: 6, y: 4))
+        .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//GymInfoView(gymInfo: GymInfo(name: "百齡高中活動中心", gymId: 1068, telephone: "02-28831568", address: "臺北市士林區義信里承德路4段177號", rate: 0.0, gymFunc: "籃球場,排球場(館),羽球場(館)", photoURL: "https://iplay.sa.gov.tw/Upload/photogym/20140529142146_百齡高中活動中心.jpg", openState: "E", landAttrName: "單一功能型運動場館（非前三項運動場館型態，且運動場館 僅含一項運動設施）", rentState: "付費對外場地租借", Declaration: nil, Distance: 0.0, LatLng: "25.0864539762441,121.523551940918", RateCount: 0))
-
-
-
-
-
-
-
-
-
-
-
+struct GymIntroduction: View {
+    @StateObject var gymDetailViewModel: GymDetailViewModel
+    private var compWidth: CGFloat { UIScreen.main.bounds.width }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            ZStack {
+                Rectangle()
+                    .stroke(Color(red: 85/255, green: 111/255, blue: 122/255), style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round, dash: [10, 10]))
+                Text("場館介紹")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+            }
+            .padding(.bottom)
+            Text("簡介")
+                .font(.title3)
+                .fontWeight(.bold)
+            Text(gymDetailViewModel.gymDetail?.intro ?? "loading")
+            Divider()
+            Text("建立時間")
+                .font(.title3)
+                .fontWeight(.bold)
+            HStack(alignment: .center) {
+                Image(systemName: "calendar")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                    .padding(.leading)
+                Spacer()
+                if gymDetailViewModel.gymDetail != nil {
+                    Group {
+                        Text("民國　") +
+                        Text(String(gymDetailViewModel.unwrapEnableTime()[0])) +
+                        Text("　年　") +
+                        Text(String(gymDetailViewModel.unwrapEnableTime()[1])) +
+                        Text("　月")
+                    }
+                    .padding(.trailing)
+                }
+            }
+            Divider()
+            Text("賽事經歷")
+                .font(.title3)
+                .fontWeight(.bold)
+            Group {
+                Text("(") +
+                Text(gymDetailViewModel.gymDetail?.Contest ?? "loading") +
+                Text(")")
+            }
+            .foregroundColor(.gray)
+            Text(gymDetailViewModel.gymDetail?.ContestIntro ?? "loading")
+        }
+        .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
+        .frame(width: compWidth-40)
+        .background(
+            Color.white
+                .shadow(color: .gray, radius: 4, x: 6, y: 4))
+        .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+    }
+}

@@ -103,6 +103,17 @@ class GymDetailViewModel: ObservableObject {
             return "未知"
         }
     }
+    
+    func unwrapEnableTime() -> [Int] {
+        var timeList = [0, 0]
+        if let year = self.gymDetail?.EnableYear {
+            timeList[0] = year
+        } else { print("year err"); timeList[0] = -1 }
+        if let month = self.gymDetail?.EnableMonth {
+            timeList[1] = month
+        } else { print("month err"); timeList[1] = -1 }
+        return timeList
+    }
 }
 
 
