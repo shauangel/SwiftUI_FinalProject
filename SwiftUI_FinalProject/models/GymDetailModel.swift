@@ -24,21 +24,21 @@ struct GymDetail: Codable {
     let Contest: String
     let ContestIntro: String?
     let Declaration: String?
-    let DeclarationUrl: URL?
+    let DeclarationUrl: String?
     let EnableMonth: Int
     let EnableYear: Int
     let ParkType: String?
     let PassEasyEle: Int?
-    let PassEasyElePhotoUrl: URL?
+    let PassEasyElePhotoUrl: String?
     let PassEasyFuncOthers: String?
     let PassEasyParking: Int?
-    let PassEasyParkingPhotoUrl: URL?
+    let PassEasyParkingPhotoUrl: String?
     let PassEasyShower: Int?
-    let PassEasyShowerPhotoUrl: URL?
+    let PassEasyShowerPhotoUrl: String?
     let PassEasyToilet: Int?
-    let PassEasyToiletPhotoUrl: URL?
+    let PassEasyToiletPhotoUrl: String?
     let PassEasyWay: Int?
-    let PassEasyWayPhotoUrl: URL?
+    let PassEasyWayPhotoUrl: String?
     let PublicTransport: String?
     let RateCount: Int?
     let WheelchairAuditorium: Int?

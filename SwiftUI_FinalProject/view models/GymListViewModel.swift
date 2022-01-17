@@ -11,10 +11,8 @@ class GymListViewModel: ObservableObject {
     @Published var gymList = [GymInfo]()
     
     func fetchGymInfo(city: String) {
-        let requestURL = "https://iplay.sa.gov.tw/api/GymSearchAllList?$format=application/json;odata.metadata=none&Keyword=排球&City=\(city)&GymType=排球"
         //處理網址中文參數
-        let urlString = requestURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "encoding URL error"
-        
+        let urlString = urlEncoder(url: "https://iplay.sa.gov.tw/api/GymSearchAllList?$format=application/json;odata.metadata=none&Keyword=排球&City=\(city)&GymType=排球")
         //make request
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { data, response, error in
@@ -44,6 +42,8 @@ class GymDetailViewModel: ObservableObject {
     
     func fetchGymDetail(gymId: Int) {
         let urlString = "https://iplay.sa.gov.tw/odata/Gym(\(gymId))?$format=application/json;odata.metadata=none&$expand=GymFuncData"
+        print(urlString)
+        
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
@@ -67,14 +67,19 @@ class GymDetailViewModel: ObservableObject {
     
     func getImage() -> [String] {
         var photoList = [String]()
-        photoList.append(self.gymDetail?.photoURL1?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "encoding URL error")
-        photoList.append(self.gymDetail?.photoURL2?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "encoding URL error")
+        photoList.append(urlEncoder(url: self.gymDetail?.photoURL1))
+        photoList.append(urlEncoder(url: self.gymDetail?.photoURL2))
         return photoList
     }
     
     func getTransInfo() -> [String] {
+        
         if let trans = self.gymDetail?.PublicTransport {
+            //pre-processing: 去除前後空格、空白行、文字分段
             var transArray = trans.components(separatedBy: "\r\n")
+            for idx in transArray.indices {
+                transArray[idx] = transArray[idx].trimmingCharacters(in: .whitespacesAndNewlines)
+            }
             transArray = transArray.filter({ $0 != "" })
             return transArray
         }
@@ -83,4 +88,27 @@ class GymDetailViewModel: ObservableObject {
             return [""]
         }
     }
+    
+    func getOpenState(state: String) -> String {
+        switch state {
+        case "E":
+            return "每天開放"
+        case "H":
+            return "假日開放"
+        case "W":
+            return "平日開放"
+        case "N":
+            return "不開放"
+        default:
+            return "未知"
+        }
+    }
+}
+
+
+func urlEncoder(url: String?) -> String {
+    if let result = url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+        return result
+    }
+    return "err"
 }
