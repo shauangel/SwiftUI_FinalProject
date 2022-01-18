@@ -30,6 +30,7 @@
 		48173FD02796E4C700F6BFD6 /* MyFavData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48173FCE2796E4C700F6BFD6 /* MyFavData.xcdatamodeld */; };
 		48173FD22796F2BD00F6BFD6 /* MyFavGymPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD12796F2BD00F6BFD6 /* MyFavGymPageView.swift */; };
 		48173FD42797072400F6BFD6 /* NavigationViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD32797072400F6BFD6 /* NavigationViewModifiers.swift */; };
+		48173FD627974CFC00F6BFD6 /* MyFavDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD527974CFC00F6BFD6 /* MyFavDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		48173FCF2796E4C700F6BFD6 /* MyFavData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFavData.xcdatamodel; sourceTree = "<group>"; };
 		48173FD12796F2BD00F6BFD6 /* MyFavGymPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavGymPageView.swift; sourceTree = "<group>"; };
 		48173FD32797072400F6BFD6 /* NavigationViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModifiers.swift; sourceTree = "<group>"; };
+		48173FD527974CFC00F6BFD6 /* MyFavDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				48173FB5278B1D2B00F6BFD6 /* GymSearchPageView.swift */,
 				48173FC72796C1FE00F6BFD6 /* GymDetailView.swift */,
 				48173FD12796F2BD00F6BFD6 /* MyFavGymPageView.swift */,
+				48173FD527974CFC00F6BFD6 /* MyFavDetailView.swift */,
 				48173FC12795614F00F6BFD6 /* ActionSheetCardView.swift */,
 				48173FBF27955EEF00F6BFD6 /* GreyOutOfFocusView.swift */,
 				48173FBD2791598500F6BFD6 /* WaitingAnimationView.swift.swift */,
@@ -339,6 +342,7 @@
 				48173FB2278AF6C700F6BFD6 /* GymInfoModel.swift in Sources */,
 				48173FC62796C1A000F6BFD6 /* GymDetailViewModel.swift in Sources */,
 				48173F87277ABB3100F6BFD6 /* ContentView.swift in Sources */,
+				48173FD627974CFC00F6BFD6 /* MyFavDetailView.swift in Sources */,
 				48173FC82796C1FE00F6BFD6 /* GymDetailView.swift in Sources */,
 				48173FC027955EEF00F6BFD6 /* GreyOutOfFocusView.swift in Sources */,
 				48173FC22795614F00F6BFD6 /* ActionSheetCardView.swift in Sources */,

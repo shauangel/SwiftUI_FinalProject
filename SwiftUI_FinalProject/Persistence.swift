@@ -4,8 +4,8 @@
 //
 //  Created by 邵安祺 on 2022/1/18.
 //
-
-import Foundation
+import UIKit
+import SwiftUI
 import CoreData
 
 struct PersistenceController {
@@ -58,5 +58,10 @@ struct PersistenceController {
             }
         }
     }
+    
+    func getManagedObjectContext() -> NSManagedObjectContext{
+        return container.viewContext
+    }
 }
+
 

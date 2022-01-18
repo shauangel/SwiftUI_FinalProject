@@ -21,10 +21,15 @@ struct MyFavGymListView: View {
         NavigationView {
             List {
                 ForEach(MyFavList) { myFav in
-                    HStack {
-                        Text(myFav.gymName!)
-                        Spacer()
-                        Timestamp(date: myFav.timestamp!)
+                    NavigationLink {
+                        MyFavDetailPageView(myFav: myFav)
+                    } label: {
+                        HStack {
+                            Text(myFav.gymName!)
+                            Spacer()
+                            Timestamp(date: myFav.timestamp!)
+                        }
+                        .listRowBackground(Color.white.opacity(0.7))
                     }
                 }
                 .onDelete(perform: deleteFavItems)
@@ -58,7 +63,7 @@ struct MyFavGymListView: View {
                     .foregroundColor(.white)
                 }
             }
-            .navigationBarColor(backgroundColor: UIColor(red: 206/255, green: 181/255, blue: 183/255, alpha: 1), titleColor: UIColor.white)
+            .navigationBarColor(backgroundColor: UIColor(red: 85/255, green: 111/255, blue: 122/255, alpha: 1), titleColor: UIColor.white)
         }
     }
     

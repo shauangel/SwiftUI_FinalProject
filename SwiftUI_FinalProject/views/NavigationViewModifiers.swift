@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NavigationBarModifier: ViewModifier {
 
-    var backgroundColor: UIColor?
-    var titleColor: UIColor?
+    @State var backgroundColor: UIColor?
+    @State var titleColor: UIColor?
 
     init(backgroundColor: UIColor?, titleColor: UIColor?) {
         self.backgroundColor = backgroundColor
@@ -39,9 +39,9 @@ struct NavigationBarModifier: ViewModifier {
         }
     }
 }
-
 extension View {
     func navigationBarColor(backgroundColor: UIColor?, titleColor: UIColor?) -> some View {
         self.modifier(NavigationBarModifier(backgroundColor: backgroundColor, titleColor: titleColor))
     }
 }
+

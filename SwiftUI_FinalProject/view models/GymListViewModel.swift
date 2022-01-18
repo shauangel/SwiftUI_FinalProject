@@ -26,7 +26,7 @@ class GymListViewModel: ObservableObject {
                         //switch to main thread
                         DispatchQueue.main.async {
                             self.gymList = gymList
-                            print(self.gymList)
+                            //print(self.gymList)
                         }
                     } catch { print(error) }
                 }
