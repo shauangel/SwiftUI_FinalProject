@@ -15,8 +15,8 @@ struct SwiftUI_FinalProjectApp: App {
     var body: some Scene {
 
         WindowGroup {
-            //MainPageView()
-            MyFavGymListView()
+            MainPageView()
+            //MyFavGymListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
             //GymDetailPageView(gymID: 2505)
             //MainPageView()

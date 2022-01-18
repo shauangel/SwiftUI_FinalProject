@@ -11,7 +11,7 @@ import SwiftUI
 struct MainPageView: View {
     var body: some View {
         TabView {
-            Text("HOMEPAGE")
+            CoverPageView()
                 .tabItem {
                     Label("首頁", systemImage: "house.fill")
                 }

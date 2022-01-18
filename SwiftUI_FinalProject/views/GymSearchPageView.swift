@@ -139,6 +139,8 @@ struct GymInfoView: View {
             newItem.gymID = Int64(self.gymInfo.gymId)
             newItem.teleNum = self.gymInfo.telephone
             newItem.userNote = ""
+            newItem.openState = self.gymInfo.openState
+            newItem.rentState = self.gymInfo.rentState
             do {
                 try viewContext.save()
             } catch {

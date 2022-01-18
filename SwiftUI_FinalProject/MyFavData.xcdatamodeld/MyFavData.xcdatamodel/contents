@@ -4,11 +4,13 @@
         <attribute name="gymAddr" optional="YES" attributeType="String"/>
         <attribute name="gymID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gymName" optional="YES" attributeType="String"/>
+        <attribute name="openState" optional="YES" attributeType="String"/>
+        <attribute name="rentState" optional="YES" attributeType="String"/>
         <attribute name="teleNum" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="userNote" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="MyFav" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="MyFav" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>
