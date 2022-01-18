@@ -9,7 +9,6 @@ import SwiftUI
 
 //主要頁面（含各分頁）
 struct MainPageView: View {
-    
     var body: some View {
         TabView {
             Text("HOMEPAGE")
@@ -20,7 +19,7 @@ struct MainPageView: View {
                 .tabItem {
                     Label("尋找場館", systemImage: "map.fill")
                 }
-            Text("MYFAVORITEPAGE")
+            MyFavGymListView()
                 .tabItem {
                     Label("我的最愛", systemImage: "heart.fill")
                 }

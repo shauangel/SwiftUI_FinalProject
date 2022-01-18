@@ -2,31 +2,37 @@
 //  ContentView.swift
 //  SwiftUI_FinalProject
 //
-//  Created by 邵安祺 on 2021/12/28.
-//
+
+
+
 
 import SwiftUI
-import Foundation
 
 struct ContentView: View {
-    //@StateObject var gymListViewModel = GymListViewModel()
-    @StateObject var gymDetailViewModel = GymDetailViewModel()
+    @State var showingSheet = false
     
+    var content: some View {
+        VStack {
+            Text("Custom Sheet")
+                .font(.largeTitle)
+                .padding()
+            Button(action: {
+                showingSheet = true
+            }) {
+                Text("Open Sheet")
+            }
+        }
+        .edgesIgnoringSafeArea(.all)
+    }
+    
+    var sheetView: some View {
+        ActionSheetCard(photoURL: "", isShowing: $showingSheet)
+    }
     
     var body: some View {
         ZStack {
-            /*
-            Color(.black)
-                .ignoresSafeArea()
-            AsyncImage(url: URL(string: "https://cataas.com/cat/cute"))
-                .opacity(0.5)
-             */
-            Button {
-                //gymListViewModel.fetchGymInfo(city: "臺北市")
-                gymDetailViewModel.fetchGymDetail(gymId: 13338)
-            } label : {
-                Text("testing API!!")
-            }
+            content
+            ActionSheetCard(photoURL: "", isShowing: $showingSheet)
         }
     }
 }
