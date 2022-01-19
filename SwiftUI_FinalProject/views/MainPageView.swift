@@ -23,10 +23,10 @@ struct MainPageView: View {
                 .tabItem {
                     Label("我的最愛", systemImage: "heart.fill")
                 }
-            Text("MOREINFOPAGE")
-                .tabItem {
-                    Label("關於", systemImage: "info.circle.fill")
-                }
+//            Text("MOREINFOPAGE")
+//                .tabItem {
+//                    Label("關於", systemImage: "info.circle.fill")
+//                }
         }
     }
 }

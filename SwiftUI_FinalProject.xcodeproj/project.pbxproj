@@ -25,12 +25,13 @@
 		48173FC22795614F00F6BFD6 /* ActionSheetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FC12795614F00F6BFD6 /* ActionSheetCardView.swift */; };
 		48173FC62796C1A000F6BFD6 /* GymDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FC52796C1A000F6BFD6 /* GymDetailViewModel.swift */; };
 		48173FC82796C1FE00F6BFD6 /* GymDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FC72796C1FE00F6BFD6 /* GymDetailView.swift */; };
-		48173FCA2796E21B00F6BFD6 /* MyFavGymModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FC92796E21B00F6BFD6 /* MyFavGymModel.swift */; };
 		48173FCD2796E4B200F6BFD6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FCC2796E4B200F6BFD6 /* Persistence.swift */; };
 		48173FD02796E4C700F6BFD6 /* MyFavData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48173FCE2796E4C700F6BFD6 /* MyFavData.xcdatamodeld */; };
 		48173FD22796F2BD00F6BFD6 /* MyFavGymPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD12796F2BD00F6BFD6 /* MyFavGymPageView.swift */; };
 		48173FD42797072400F6BFD6 /* NavigationViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD32797072400F6BFD6 /* NavigationViewModifiers.swift */; };
 		48173FD627974CFC00F6BFD6 /* MyFavDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD527974CFC00F6BFD6 /* MyFavDetailView.swift */; };
+		48173FD827977B3000F6BFD6 /* FunModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD727977B3000F6BFD6 /* FunModel.swift */; };
+		48173FDA27977BDE00F6BFD6 /* FunViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD927977BDE00F6BFD6 /* FunViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,13 +73,14 @@
 		48173FC12795614F00F6BFD6 /* ActionSheetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCardView.swift; sourceTree = "<group>"; };
 		48173FC52796C1A000F6BFD6 /* GymDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDetailViewModel.swift; sourceTree = "<group>"; };
 		48173FC72796C1FE00F6BFD6 /* GymDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymDetailView.swift; sourceTree = "<group>"; };
-		48173FC92796E21B00F6BFD6 /* MyFavGymModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavGymModel.swift; sourceTree = "<group>"; };
 		48173FCB2796E2A100F6BFD6 /* SwiftUI-FinalProject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-FinalProject-Info.plist"; sourceTree = SOURCE_ROOT; };
 		48173FCC2796E4B200F6BFD6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		48173FCF2796E4C700F6BFD6 /* MyFavData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFavData.xcdatamodel; sourceTree = "<group>"; };
 		48173FD12796F2BD00F6BFD6 /* MyFavGymPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavGymPageView.swift; sourceTree = "<group>"; };
 		48173FD32797072400F6BFD6 /* NavigationViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModifiers.swift; sourceTree = "<group>"; };
 		48173FD527974CFC00F6BFD6 /* MyFavDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavDetailView.swift; sourceTree = "<group>"; };
+		48173FD727977B3000F6BFD6 /* FunModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunModel.swift; sourceTree = "<group>"; };
+		48173FD927977BDE00F6BFD6 /* FunViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				48173FB3278B092F00F6BFD6 /* GymListViewModel.swift */,
 				48173FC52796C1A000F6BFD6 /* GymDetailViewModel.swift */,
+				48173FD927977BDE00F6BFD6 /* FunViewModel.swift */,
 			);
 			path = "view models";
 			sourceTree = "<group>";
@@ -199,7 +202,7 @@
 			children = (
 				48173FB1278AF6C700F6BFD6 /* GymInfoModel.swift */,
 				48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */,
-				48173FC92796E21B00F6BFD6 /* MyFavGymModel.swift */,
+				48173FD727977B3000F6BFD6 /* FunModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -337,16 +340,17 @@
 				48173FB6278B1D2B00F6BFD6 /* GymSearchPageView.swift in Sources */,
 				48173FD42797072400F6BFD6 /* NavigationViewModifiers.swift in Sources */,
 				48173FCD2796E4B200F6BFD6 /* Persistence.swift in Sources */,
+				48173FD827977B3000F6BFD6 /* FunModel.swift in Sources */,
 				48173FD22796F2BD00F6BFD6 /* MyFavGymPageView.swift in Sources */,
 				48173FBA278F0C5000F6BFD6 /* MainPageView.swift in Sources */,
 				48173FB2278AF6C700F6BFD6 /* GymInfoModel.swift in Sources */,
 				48173FC62796C1A000F6BFD6 /* GymDetailViewModel.swift in Sources */,
 				48173F87277ABB3100F6BFD6 /* ContentView.swift in Sources */,
 				48173FD627974CFC00F6BFD6 /* MyFavDetailView.swift in Sources */,
+				48173FDA27977BDE00F6BFD6 /* FunViewModel.swift in Sources */,
 				48173FC82796C1FE00F6BFD6 /* GymDetailView.swift in Sources */,
 				48173FC027955EEF00F6BFD6 /* GreyOutOfFocusView.swift in Sources */,
 				48173FC22795614F00F6BFD6 /* ActionSheetCardView.swift in Sources */,
-				48173FCA2796E21B00F6BFD6 /* MyFavGymModel.swift in Sources */,
 				48173FB4278B092F00F6BFD6 /* GymListViewModel.swift in Sources */,
 				48173FBC278F0CA400F6BFD6 /* CoverPageView.swift in Sources */,
 				48173FD02796E4C700F6BFD6 /* MyFavData.xcdatamodeld in Sources */,
@@ -510,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI_FinalProject/Preview Content\"";
@@ -541,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI_FinalProject/Preview Content\"";

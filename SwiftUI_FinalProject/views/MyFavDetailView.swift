@@ -26,7 +26,7 @@ struct MyFavDetailPageView: View {
                 Text(myFav.gymName!)
                     .font(.title)
                 Rectangle()
-                    .fill(Color(red: 85/255, green: 111/255, blue: 122/255))
+                    .fill(MyColorPlate.cadet)
                     .frame(width: compWidth-40, height: 3)
                 VStack(alignment: .leading) {
                     HStack(alignment: .center) {
@@ -73,11 +73,17 @@ struct MyFavDetailPageView: View {
                     }
                     .padding()
                     Divider()
-                    TextEditor(text: $userNote)
-                        .frame(height: 300)
-                        .padding()
-                        .border(Color(red: 85/255, green: 111/255, blue: 122/255), width: 5)
-                        .padding()
+                    VStack(alignment: .leading) {
+                        Text("My Memo")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(MyColorPlate.cadet)
+                        TextEditor(text: $userNote)
+                            .frame(height: 300)
+                            .padding()
+                            .border(MyColorPlate.cadet, width: 5)
+                    }
+                    .padding()
                 }
                 .frame(width: compWidth-40)
                 .background(

@@ -39,7 +39,13 @@ struct GymListView: View {
                             }
                         }
                     }
+                    else {
+                        ProgressView("Searching...")
+                    }
                 }
+            }
+            .refreshable {
+                gymListViewModel.fetchGymInfo(city: searchKey)
             }
             .navigationBarTitle("體育場館", displayMode: .inline)
             .navigationBarColor(backgroundColor: UIColor(red: 85/255, green: 111/255, blue: 122/255, alpha: 1), titleColor: UIColor.white)
