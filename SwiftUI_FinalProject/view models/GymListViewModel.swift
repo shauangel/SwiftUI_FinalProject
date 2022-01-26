@@ -4,7 +4,7 @@
 //
 //  Created by 邵安祺 on 2022/1/9.
 //
-
+import CoreData
 import Foundation
 
 class GymListViewModel: ObservableObject {

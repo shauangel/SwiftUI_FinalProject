@@ -44,9 +44,6 @@ struct GymListView: View {
                     }
                 }
             }
-            .refreshable {
-                gymListViewModel.fetchGymInfo(city: searchKey)
-            }
             .navigationBarTitle("體育場館", displayMode: .inline)
             .navigationBarColor(backgroundColor: UIColor(red: 85/255, green: 111/255, blue: 122/255, alpha: 1), titleColor: UIColor.white)
         }
@@ -157,7 +154,6 @@ struct GymInfoView: View {
     }
     
     func checkIfExists(gymID: Int) -> Bool {
-        print()
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "MyFav")
         fetchRequest.predicate = NSPredicate(format: "gymID == %@", NSNumber(value: gymID))
         var results: [NSManagedObject] = []
@@ -167,7 +163,6 @@ struct GymInfoView: View {
         catch {
             print("error executing fetch request: \(error)")
         }
-
         return results.count > 0
     }
     

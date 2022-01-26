@@ -115,21 +115,21 @@ struct SupriseView: View {
         }
         .alert(isPresented: $triggerAlert) {
             Alert(
-                        title: Text("Unable to Get Api Response"),
-                        message: Text("The connection to the server was lost."),
-                        primaryButton: .default(
-                            Text("Try Again"),
-                            action: {
-                                triggerAlert = funViewModel.fetchMeme()
-                            }
-                        ),
-                        secondaryButton: .destructive(
-                            Text("Cancel"),
-                            action: {
-                                triggerAlert.toggle()
-                            }
-                        )
-                    )
+                title: Text("Unable to Get Api Response"),
+                message: Text("The connection to the server was lost."),
+                primaryButton: .default(
+                    Text("Try Again"),
+                    action: {
+                        triggerAlert = funViewModel.fetchMeme()
+                    }
+                ),
+                secondaryButton: .destructive(
+                    Text("Cancel"),
+                    action: {
+                        triggerAlert.toggle()
+                    }
+                )
+            )
         }
     }
 }

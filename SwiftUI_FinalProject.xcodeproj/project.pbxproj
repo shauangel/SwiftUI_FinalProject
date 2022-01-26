@@ -32,6 +32,8 @@
 		48173FD627974CFC00F6BFD6 /* MyFavDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD527974CFC00F6BFD6 /* MyFavDetailView.swift */; };
 		48173FD827977B3000F6BFD6 /* FunModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD727977B3000F6BFD6 /* FunModel.swift */; };
 		48173FDA27977BDE00F6BFD6 /* FunViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FD927977BDE00F6BFD6 /* FunViewModel.swift */; };
+		48173FDC2797EDB900F6BFD6 /* MyFavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FDB2797EDB900F6BFD6 /* MyFavViewModel.swift */; };
+		48173FDE2797EE0A00F6BFD6 /* RecordStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48173FDD2797EE0A00F6BFD6 /* RecordStateModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		48173FD527974CFC00F6BFD6 /* MyFavDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavDetailView.swift; sourceTree = "<group>"; };
 		48173FD727977B3000F6BFD6 /* FunModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunModel.swift; sourceTree = "<group>"; };
 		48173FD927977BDE00F6BFD6 /* FunViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunViewModel.swift; sourceTree = "<group>"; };
+		48173FDB2797EDB900F6BFD6 /* MyFavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavViewModel.swift; sourceTree = "<group>"; };
+		48173FDD2797EE0A00F6BFD6 /* RecordStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordStateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,7 @@
 				48173FB3278B092F00F6BFD6 /* GymListViewModel.swift */,
 				48173FC52796C1A000F6BFD6 /* GymDetailViewModel.swift */,
 				48173FD927977BDE00F6BFD6 /* FunViewModel.swift */,
+				48173FDB2797EDB900F6BFD6 /* MyFavViewModel.swift */,
 			);
 			path = "view models";
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				48173FB1278AF6C700F6BFD6 /* GymInfoModel.swift */,
 				48173FB7278B22FB00F6BFD6 /* GymDetailModel.swift */,
 				48173FD727977B3000F6BFD6 /* FunModel.swift */,
+				48173FDD2797EE0A00F6BFD6 /* RecordStateModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48173FDC2797EDB900F6BFD6 /* MyFavViewModel.swift in Sources */,
 				48173FB6278B1D2B00F6BFD6 /* GymSearchPageView.swift in Sources */,
 				48173FD42797072400F6BFD6 /* NavigationViewModifiers.swift in Sources */,
 				48173FCD2796E4B200F6BFD6 /* Persistence.swift in Sources */,
@@ -349,6 +356,7 @@
 				48173FD627974CFC00F6BFD6 /* MyFavDetailView.swift in Sources */,
 				48173FDA27977BDE00F6BFD6 /* FunViewModel.swift in Sources */,
 				48173FC82796C1FE00F6BFD6 /* GymDetailView.swift in Sources */,
+				48173FDE2797EE0A00F6BFD6 /* RecordStateModel.swift in Sources */,
 				48173FC027955EEF00F6BFD6 /* GreyOutOfFocusView.swift in Sources */,
 				48173FC22795614F00F6BFD6 /* ActionSheetCardView.swift in Sources */,
 				48173FB4278B092F00F6BFD6 /* GymListViewModel.swift in Sources */,
